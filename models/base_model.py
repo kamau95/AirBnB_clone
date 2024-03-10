@@ -1,11 +1,12 @@
-import uuid
-import datetime
-
-
+#!/usr/bin/python3
 """
 this file contains a base class BaseModel that
 defines all common attributes/methods for other classes
 """
+
+
+import uuid
+import datetime
 
 
 class BaseModel:
@@ -26,12 +27,10 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.now()
             self.updated_at = datetime.datetime.now()
-            storage.new(self)
 
     def save(self):
         """updates attribute updated_at with the current datetime"""
         self.updated_at = datetime.datetime.now()
-        storage.save()
 
     def to_dict(self):
         """adding new key/value pairs to my object"""
@@ -48,6 +47,3 @@ class BaseModel:
     def __str__(self):
         """overwriting the str method"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
-
-"""imports storage or the instance stored"""
-from models.__init__ import storage
