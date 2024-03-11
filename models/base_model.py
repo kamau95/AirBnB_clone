@@ -22,10 +22,10 @@ class BaseModel:
             for key in kwargs:
                 if key == "created_at":
                     self.__dict__["created_at"] = datetime.strptime(
-                        kwargs["created_at"], time_format)
+                        kwargs["created_at"], BaseModel.time_format)
                 elif key == "updated_at":
                     self.__dict__["updated_at"] = datetime.strptime(
-                        kwargs["updated_at"], time_format)
+                        kwargs["updated_at"], BaseModel.time_format)
                 else:
                     self.__dict__[key] = kwargs[key]
         else:
