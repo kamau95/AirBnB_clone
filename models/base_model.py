@@ -9,6 +9,7 @@ from datetime import datetime
 class BaseModel:
     """my parent class - other classes will inherit"""
     time_format = "%Y-%m-%dT%H:%M:%S.%f"
+
     def __init__(self, *args, **kwargs):
 
         """Initializes instance attributes
