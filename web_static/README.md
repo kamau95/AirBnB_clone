@@ -1,0 +1,1 @@
+this folder will hold my html structure of the airbnb html and also the styles that will be used to style the html
